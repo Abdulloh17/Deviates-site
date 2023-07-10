@@ -1,0 +1,107 @@
+{%extends 'include/homepage.html'%}
+{%load static%}
+{%block content%}
+{% include 'include/header.html' %}
+{% load socialaccount %}
+
+
+    <!-- header -->
+    <header class="single-header">
+        <!-- Start: Header Content -->
+        <div class="container">
+            <div class="row text-center wow fadeInUp" data-wow-delay="0.5s">
+                <div class="col-sm-12">
+                    <!-- Headline Goes Here -->
+                    <h3>Регистрация</h3>
+                    <h4><a href="{% url 'index' %}"> Домой </a> <span> &vert; </span> Регистрация </h4>
+                </div>
+            </div>
+            <!-- End: .row -->
+        </div>
+        <!-- End: Header Content -->
+    </header>
+    <!--/. header -->
+    <!--/    
+==================================================-->
+
+
+
+    <!-- Start: Account Section 
+==================================================-->
+    <section class="account-section">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="reg_wrap">
+                        <!-- Start: Image -->
+                        <div class="reg_img">
+                            <img src="{% static 'images/janysh1.png'%}" alt="">
+                        </div>
+
+                        <!-- Start:  Signup  Form  -->
+                        <div class="registration-form">
+                            <h2> Создайте свой профиль </h2>
+                            <form method="post">
+                                <div class="row">
+                                    {% csrf_token %}
+
+                                    <div class="col-md-12 col-sm-12">
+                                        <input class="signup-field" name="username" id="username" type="text"
+                                            placeholder="Имя пользователя">
+                                    </div>
+                                    <div class="col-md-12 col-sm-12">
+                                        <input class="signup-field" name="password" id="password" type="text"
+                                            placeholder="Пароль">
+                                    </div>
+
+                                    <div class="col-md-12 col-sm-12">
+                                        <input class="signup-field" name="confirm" id="email" type="text"
+                                            placeholder="Подтвердить пароль">
+                                    </div>
+                                    <h4>Воспользуйтесь промокодами</h4>
+                                    <div class="col-md-12 col-sm-12">
+                                        <input class="signup-field" name="bonus" id="bonus" type="text"
+                                            placeholder="Введите промокод">
+                                    </div>
+                                    
+                                    <div class="col-sm-12">
+                                        <div class="term-and-condition">
+                                            <input type="checkbox" id="term">
+                                            <label for="term">Нажимая на кнопку <a href="#">я соглашаюсь на обработку</a> персональных данных <a
+                                                    href="#"> (смореть) </a></label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 submit-area">
+                                        <!-- <a href="{% url 'index' %}" class="submit more-link"> Регистрация </a> -->
+                                        <button class="submit more-link" type="submit">Регистрация</button>
+                                        <a class="submit more-link" href="{% provider_login_url 'google'%}">Войти через Google</a>
+                                        <div id="msg" class="message"></div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <a href="#">Если у вас есть аккаунт то нажмите </a>
+                                    <a href="{% url 'login' %}"><strong>Войти</strong></a>
+                                </div>
+                            </div>
+                            </form>
+                        </div>
+                        <!-- End:Signup Form  -->
+                    </div>
+                    <!-- .col-md-6 .col-sm-12 /- -->
+                </div>
+            </div>
+            <!-- row /- -->
+        </div>
+        <!-- container /- -->
+    </section>
+    <!-- End : Account Section 
+==================================================-->
+
+
+
+
+    <!-- Start:Footer Section
+==================================================-->
+{% include 'include/footer.html' %}
+
+{%endblock%}

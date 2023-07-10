@@ -1,0 +1,233 @@
+{%extends 'include/homepage.html'%}
+{%load static%}
+{%block content%}
+
+{% include 'include/header.html' %}
+
+    <!-- header -->
+    <header class="single-header">
+      <!-- Start: Header Content -->
+      <div class="container">
+        <div class="row text-center wow fadeInUp" data-wow-delay="0.5s">
+          <div class="col-sm-12">
+            <!-- Headline Goes Here -->
+            <h3>О нас</h3>
+            <h4>
+              <a href="{% url 'index' %}"> Домой </a>
+              <span> &vert; </span> О нас
+            </h4>
+          </div>
+        </div>
+        <!-- End: .row -->
+      </div>
+      <!-- End: Header Content -->
+    </header>
+    <!--/. header -->
+    <!--/    
+==================================================-->
+    <!-- Start: Work Flow Section
+==================================================-->
+    <section class="workflow-section pt-120">
+      <!-- Container -->
+      <div class="container">
+        <!-- Start: Heading -->
+        <div class="base-header text-center">
+          <h3> Высший рабочий процесс</h3>
+        </div>
+        <!-- End: Heading -->
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <!-- category 1 -->
+            <div class="workflow_item">
+              <i class="pe-7s-search"></i>
+              <h4> Найдите свой курс </h4>
+              <p>Обнаружьте и выберите идеальный курс, соответствующий вашим интересам и целям. Узнайте больше о содержании, требованиях и возможностях каждого курса, чтобы начать свое обучение прямо сейчас. Погрузитесь в мир новых знаний и профессионального роста с нами.</p>
+            </div>
+          </div>
+          <!--/ col-lg-4 col-md-6 col-sm-12  -->
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <!-- category 1 -->
+            <div class="workflow_item">
+              <i class="pe-7s-date"></i>
+              <h4>Получите доступ к курсу </h4>
+              <p> "{{setting.name_site}}" - ваш путь к приобретению образовательных курсов. Наша платформа предлагает удобный и безопасный процесс покупки желаемых курсов, помогая вам расширить свои знания и навыки. С "{{setting.name_site}}" вы можете легко выбрать и приобрести курсы, которые соответствуют вашим образовательным целям.</p>
+            </div>
+          </div>
+          <!--/ col-lg-4 col-md-6 col-sm-12  -->
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <!-- category 1 -->
+            <div class="workflow_item">
+              <i class="pe-7s-medal"></i>
+              <h4> Мгновенная сертификация </h4>
+              <p>Мы рады предложить вам уникальную возможность мгновенной сертификации после успешного завершения нашей обучающей программы. Мы понимаем, что ваше время ценно, поэтому мы разработали инновационный процесс, который позволяет немедленно получить официальные сертификаты, подтверждающие вашу профессиональную квалификацию.</p>
+            </div>
+          </div>
+          <!--/ col-lg-4 col-md-6 col-sm-12  -->
+        </div>
+        <!--/ row - -->
+      </div>
+      <!--/ Container - -->
+    </section>
+    <!--   End: Work Flow Section
+==================================================-->
+    <!-- Start:  About US  Section
+==================================================-->
+    <section class="about-section about_pg_sec">
+      <!-- Container -->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-sm-12">
+            <div class="abt_rating">
+              <h4> 4.9+</h4>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <span> User Rating</span>
+            </div>
+            <!-- /.abt_rating-->
+            <div class="about_img" id="scene">
+              <img src="{{about.image.url}}" alt="image" class="layer" data-depth="0.28">
+            </div>
+            <!-- /.about_img-->
+            <div class="abt_course">
+              <h4>47K+</h4>
+              <i class="fa fa-heart"></i>
+              <i class="fa fa-heart"></i>
+              <i class="fa fa-heart"></i>
+              <i class="fa fa-heart"></i>
+              <i class="fa fa-heart"></i>
+              <span> Active Courses</span>
+            </div>
+            <!-- /.abt_course-->
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <div class="about_text">
+              <h3> {{about.title}} </h3>
+              <p> {{about.description}}</p>
+              <a href="{% url 'courses' %}" class="more-link"> Купить курсы</a>
+            </div>
+          </div>
+          <!--/ col-md-12  -->
+        </div>
+        <!--/ row - -->
+      </div>
+      <!--/ Container - -->
+    </section>
+    <!--   End: About US  Section
+==================================================-->
+    <!-- Start: Funfacts Section
+==================================================-->
+    <section class="funfacts-section">
+      <!-- Container -->
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6 col-lg-3">
+            <div class="funfacts_item">
+              <img src="{% static 'images/funfact1.png'%}" alt="">
+              <h2> {{data.online_course}}+ </h2>
+              <span> Онлайн курсов </span>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-3">
+            <div class="funfacts_item">
+              <img src="{% static 'images/funfact2.png'%}" alt="">
+              <h2> {{data.active_students}}+ </h2>
+              <span> Активных студентов </span>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-3">
+            <div class="funfacts_item">
+              <img src="{% static 'images/funfact3.png'%}" alt="">
+              <h2> {{data.expert_instructor}}+ </h2>
+              <span> Опытных преподавателей </span>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-3">
+            <div class="funfacts_item">
+              <img src="{% static 'images/funfact4.png'%}" alt="">
+              <h2>{{data.hours_educate}}+</h2>
+              <span> Часов обучения</span>
+            </div>
+          </div>
+        </div>
+        <!--/ row - -->
+      </div>
+      <!--/ Container - -->
+    </section>
+    <!--   End: Funfacts Section
+==================================================-->
+    <!-- Start:  Learners Feedback Section
+==================================================-->
+    <section class="lfeedback-section about_pg_lfeedback">
+      <!-- Container -->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-sm-12">
+            <div class="lfeedback_img" id="scene2">
+              <img src="{% static 'images/feedback.png'%}" alt="image" class="layer" data-depth="0.28">
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12" id="lfeedback_cur">
+            <div class="lfeedback_item">
+              <!-- Start: Heading -->
+              <div class="base-header">
+                <h3> Our Learners Feedback </h3>
+              </div>
+              <!-- Best Book Image 1 -->
+              <div class="lfeedback_text">
+                <p> It's Had been a fear most experience me that I feel a great assumption that never thoughts that will happens to But great provocatives things appropities received without realmost qualifier that happen that never thoughts that will happens to a fear most experience. </p>
+                <h4> David Benjamin </h4>
+                <h5>Washington, United States</h5>
+              </div>
+            </div>
+            <div class="lfeedback_item">
+              <!-- Start: Heading -->
+              <div class="base-header">
+                <h3> Our Learners Feedback </h3>
+              </div>
+              <!-- Best Book Image 1 -->
+              <div class="lfeedback_text">
+                <p> It's Had been a fear most experience me that I feel a great assumption that never thoughts that will happens to But great provocatives things appropities received without realmost qualifier that happen that never thoughts that will happens to a fear most experience. </p>
+                <h4> David Benjamin </h4>
+                <h5>Washington, United States</h5>
+              </div>
+            </div>
+          </div>
+          <!--/ col-md-12  -->
+        </div>
+        <!--/ row - -->
+      </div>
+      <!--/ Container - -->
+    </section>
+    <!--   End: Learners Feedback Section
+==================================================-->
+    <!-- Start:  Call to action Section
+==================================================-->
+    <section class="cta-section">
+      <!-- Container -->
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="cta_wrap">
+              <div class="cta_text">
+                <h3> Учебная платформа {{setting.name_site}} </h3>
+                <p> Присоединяйтесь к нам прямо сейчас на учебной платформе {{setting.name_site}} и начните свой следующий шаг в образовании! Мы являемся источником мотивации, знаний и возможностей для всех, кто жаждет учиться и расти. </p>
+              </div>
+              <a href="{% url 'register' %}" class="more-link"> Присоединяйтесь К Нам Сейчас </a>
+            </div>
+          </div>
+          <!--/ col-md-12  -->
+        </div>
+        <!--/ row - -->
+      </div>
+      <!--/ Container - -->
+    </section>
+    <!--   End: Call to action Section
+==================================================-->
+
+
+{% include 'include/footer.html' %}
+
+{%endblock%}

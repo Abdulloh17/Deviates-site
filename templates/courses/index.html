@@ -1,0 +1,74 @@
+{%extends 'include/homepage.html'%}
+{%load static%}
+{%block content%}
+
+{% include 'include/header.html' %}
+
+    <!-- header -->
+    <header class="single-header">
+      <!-- Start: Header Content -->
+      <div class="container">
+        <div class="row text-center wow fadeInUp" data-wow-delay="0.5s">
+          <div class="col-sm-12">
+            <!-- Headline Goes Here -->
+            <h3>Наши курсы</h3>
+            <h4>
+              <a href="{% url 'index' %}"> Домой </a>
+              <span> &vert; </span> Курсы
+            </h4>
+          </div>
+        </div>
+        <!-- End: .row -->
+      </div>
+      <!-- End: Header Content -->
+    </header>
+    <!--/. header -->
+    <!--/    
+==================================================-->
+    <!-- Start: Featured Courses Section
+==================================================-->
+    <section class="feat-course-section course-page">
+      <div class="container">
+        <!-- Start: Heading -->
+        <div class="base-header">
+          <h3> Наши курсы </h3>
+        </div>
+        <!-- End: Heading -->
+        <div class="row">
+          {% for course in course %}
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="feat_course_item">
+              <a href="{% url 'detail_courses' course.id %}">
+                <img src="{{course.image.url}}" width="10%" alt="image">
+              </a>
+              <div class="feat_cour_price">
+                <a href="{% url 'detail_courses' course.id %}"><span class="feat_cour_tag"> {{ course.title }} </span></a>
+                <a href="{% url 'detail_courses' course.id %}"><span class="feat_cour_p"> {{ course.price }} СОМ </span></a>
+              </div>
+              <a href="{% url 'detail_courses' course.id %}"><h4 class="feat_cour_tit">{{course.title}}</h4></a>
+              <div class="feat_cour_lesson">
+                <span class="feat_cour_less">
+                  <i class="pe-7s-note2"></i> {{course.less}} lessons </span>
+                <span class="feat_cour_stu">
+                  <i class="pe-7s-add-user"></i> {{course.students}} Students </span>
+              </div>
+              <div class="feat_cour_rating">
+                <span class="feat_cour_rat"> 4.8 <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i> (4,539) </span>
+                <a href="{% url 'detail_courses' course.id %}">
+                  <i class="arrow_right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          {%endfor %}
+          
+
+
+
+{% include 'include/footer.html' %}
+
+{%endblock%}
